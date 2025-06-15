@@ -29,6 +29,8 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> dropPieces;
 
+    [SerializeField] private GameObject dangerLinePrefab;
+
     private void Awake()
     {
         instance = this;
@@ -133,6 +135,14 @@ public class GridManager : MonoBehaviour
                 tiles[x, y] = tile;
             }
         }
+
+        //Danger Zone
+        for (int x = 0; x < gridSize.x; x++)
+        {
+            Vector2 spawnPosition = startPosition + new Vector2(x * tileSize.x, (gridSize.y + 1) * tileSize.y);
+            GameObject dangerLine = Instantiate(dangerLinePrefab, transform);
+            dangerLine.transform.localPosition = spawnPosition;
+        }
     }
 
     void RepeatReady()
@@ -142,7 +152,8 @@ public class GridManager : MonoBehaviour
 
     void SpawnDrop()
     {
-        Instantiate(dropPieces[Random.Range(0, dropPieces.Count)], new Vector2(tiles[Random.Range(0, gridSize.x), 0].transform.position.x, 106f), Quaternion.identity);
+        int column = Random.Range(0, gridSize.x);
+        Instantiate(dropPieces[Random.Range(0, dropPieces.Count)], new Vector2(tiles[column, 0].transform.position.x, 106f), Quaternion.identity).GetComponent<Drop>().column = column;
         Invoke("SpawnDrop", CalculateSpawnFrequency());
     }
 

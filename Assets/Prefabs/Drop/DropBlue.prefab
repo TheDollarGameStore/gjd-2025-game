@@ -48,9 +48,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6321824356501708185, guid: 917f3daa5928baa40a7ef1f9f1edc137, type: 3}
+      propertyPath: piecePrefab
+      value: 
+      objectReference: {fileID: 5043080068128466744, guid: 2185bdf6906ece646bc8a75f712a539b, type: 3}
     - target: {fileID: 7041218420828675881, guid: 917f3daa5928baa40a7ef1f9f1edc137, type: 3}
       propertyPath: m_Name
-      value: DropBase
+      value: DropBlue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

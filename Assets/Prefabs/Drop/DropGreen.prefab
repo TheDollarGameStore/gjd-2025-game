@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: color
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6321824356501708185, guid: 917f3daa5928baa40a7ef1f9f1edc137, type: 3}
+      propertyPath: piecePrefab
+      value: 
+      objectReference: {fileID: 4621178258671256891, guid: 300b03276f87e2a4f8b8683ccb687a33, type: 3}
     - target: {fileID: 7041218420828675881, guid: 917f3daa5928baa40a7ef1f9f1edc137, type: 3}
       propertyPath: m_Name
       value: DropGreen

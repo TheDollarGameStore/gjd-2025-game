@@ -169,13 +169,14 @@ MonoBehaviour:
   paddlePos: 0
   paddle: {fileID: 810484976}
   movementRepeatCooldown: 0.15
-  gameSpeed: 16
+  gameSpeed: 32
   spawnFrequencyBase: 64
   dropPieces:
   - {fileID: 4892736851484495584, guid: 1ae7e5f21bdeb4d4d82ed7b42709875a, type: 3}
   - {fileID: 8376726179239917842, guid: 44d5c6ee82460274aab27a45236b1257, type: 3}
   - {fileID: 3912873356273464859, guid: e5bf6d3b2a01aff429c7247cfce31277, type: 3}
   - {fileID: 1300750508354116720, guid: 1e07994a3b6efc54c82d26185c378447, type: 3}
+  dangerLinePrefab: {fileID: 5654097758968447384, guid: b52245d087502a84aa44c852bb69964b, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +189,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -313,6 +315,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb887bc805640be4892fc57b8bed8d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

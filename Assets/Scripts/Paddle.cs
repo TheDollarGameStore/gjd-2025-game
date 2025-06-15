@@ -14,6 +14,8 @@ public class Paddle : MonoBehaviour
     [SerializeField] private Sprite emptySprite;
     [SerializeField] private Sprite fullSprite;
 
+    [SerializeField] private AudioClip catchSound;
+
     private void Start()
     {
         currentPieces = new List<Piece>();
@@ -42,6 +44,8 @@ public class Paddle : MonoBehaviour
         {
             return false;
         }
+
+        SoundManager.instance.PlayNormal(catchSound);
 
         Piece newPiece = Instantiate(pieces[(int)color], transform.position + (Vector3)(Vector2.up * 7 * (currentPieces.Count + 1)), Quaternion.identity, transform).GetComponent<Piece>();
         newPiece.UpdateYPos(currentPieces.Count + 1);

@@ -31,6 +31,9 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] private GameObject dangerLinePrefab;
 
+    [SerializeField] private AudioClip placeSound;
+    [SerializeField] private AudioClip moveSound;
+
     private void Awake()
     {
         instance = this;
@@ -65,6 +68,7 @@ public class GridManager : MonoBehaviour
             paddlePos--;
             repeatReady = false;
             CancelInvoke("RepeatReady");
+            SoundManager.instance.PlayNormal(moveSound);
             Invoke("RepeatReady", movementRepeatCooldown);
         }
 
@@ -73,6 +77,7 @@ public class GridManager : MonoBehaviour
             paddlePos++;
             repeatReady = false;
             CancelInvoke("RepeatReady");
+            SoundManager.instance.PlayNormal(moveSound);
             Invoke("RepeatReady", movementRepeatCooldown);
         }
 
@@ -88,6 +93,7 @@ public class GridManager : MonoBehaviour
                 paddlePos--;
                 repeatReady = false;
                 CancelInvoke("RepeatReady");
+                SoundManager.instance.PlayNormal(moveSound);
                 Invoke("RepeatReady", movementRepeatCooldown);
             }
         }
@@ -99,6 +105,7 @@ public class GridManager : MonoBehaviour
                 paddlePos++;
                 repeatReady = false;
                 CancelInvoke("RepeatReady");
+                SoundManager.instance.PlayNormal(moveSound);
                 Invoke("RepeatReady", movementRepeatCooldown);
             }
         }
@@ -173,6 +180,7 @@ public class GridManager : MonoBehaviour
                 piece.gameObject.transform.parent = null;
                 piece.UpdateYPos(y + 1);
                 piece.StartCoroutine(piece.FlashEffect());
+                SoundManager.instance.PlayRandomized(placeSound);
                 return true;
             }
         }
